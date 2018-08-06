@@ -12,13 +12,18 @@ const ResultView = function () {
    });
 
    ResultView.prototype.updateView = function(result) {
-     const resultElement = document.querySelector('#result');
+     const resultElement = document.querySelector('#wordcounter-form');
+     resultElement.addEventListener('submit', (event) => {
+       event.preventDefault();
+       const results = document.querySelector('#result');
+
      if (result !== ''){
-       resultElement.textContent =`Your word count is: ` + result;
+       results.textContent =`Your word count is: ` + result;
      }
      else {
-       resultElement.textContent = "You did not input any text!"
+       results.textContent = "You did not input any text!"
      }
+   });
    }
  }
 
