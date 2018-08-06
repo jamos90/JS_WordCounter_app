@@ -13,7 +13,5 @@ const ResultView = function () {
      if (result !== ' '){
        `Your word count is: ${result}`;
      }
-
-
    }
  }
