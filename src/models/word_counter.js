@@ -8,8 +8,10 @@ WordCounter.prototype.countOfWords = function (string) {
 };
 
 WordCounter.prototype.bindEvents = function() {
-  PubSub.subscribe("InputVeiw:text-inputted", () => {
-
+  PubSub.subscribe("InputVeiw:text-inputted", (evt) => {
+    const inputtedText = evt.detail;
+    const result = this.countOfWords(inputtedText);
+    PubSub.publish("WordCounter:result", result);
   });
 }
 
