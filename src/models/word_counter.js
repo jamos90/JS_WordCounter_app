@@ -1,10 +1,13 @@
+const PubSub = require('../helpers/pub_sub.js');
+
 const WordCounter = function () {
 
 };
 
 WordCounter.prototype.countOfWords = function (string) {
-  const wordCount = string.trim().split(/\s+/).length;
-  console.log(wordCount);
+  return string.trim().split(/\s+/).length;
+
+
 };
 
 WordCounter.prototype.bindEvents = function() {
